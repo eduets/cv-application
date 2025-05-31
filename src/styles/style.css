@@ -1,0 +1,142 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Normalize */
+button:hover {
+  cursor: pointer;
+}
+
+/* Style */
+@font-face {
+  font-family: "Inter 18pt";
+  src: url("../fonts/Inter18pt-Regular.woff2") format("woff2"),
+    url("../fonts/Inter18pt-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-base: "Inter 18pt", Seravek, "Gill Sans Nova", Ubuntu, Calibri,
+    "DejaVu Sans", source-sans-pro, sans-serif;
+  --color-background-dark: #f3f3f3;
+  --color-background-normal: #fcfbfb;
+  --color-background-soft: #fefefe;
+  --color-background-interactive: #1e72e9;
+  --color-line-interactive: #e3eaf8;
+  --color-line-dark: #101112;
+  --color-line-normal: #828383;
+  --color-line-soft: #dadadb;
+  --max-width: 1000px;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--color-background-dark);
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-line-dark);
+  padding: 20px 0px;
+}
+
+#root {
+  min-height: 100%;
+  max-width: var(--max-width);
+  width: fit-content;
+  min-width: min(100vw, var(--max-width));
+  margin: 0px auto;
+  background-color: var(--color-background-normal);
+  box-shadow: 0px 0px 8px var(--color-line-normal);
+  border-radius: 30px;
+}
+
+button {
+  background-color: var(--color-background-interactive);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: var(--color-line-interactive);
+  font-weight: bold;
+  margin: 2px 4px;
+}
+
+.delete {
+  padding: 6px 12px;
+  background-color: tomato;
+  margin-left: auto;
+}
+
+button:hover {
+  box-shadow: 2px 2px 2px var(--color-line-normal);
+}
+
+input,
+textarea {
+  background-color: var(--color-background-soft);
+  border: 1px solid var(--color-line-normal);
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--color-line-dark);
+  width: 600px;
+}
+
+input[type="date"] {
+  width: 210px;
+}
+
+textarea {
+  height: 90px;
+  resize: none;
+}
+
+h1 {
+  padding: 30px 40px;
+}
+h2 {
+  padding: 10px 40px;
+}
+
+section {
+  padding: 10px 80px;
+}
+form > div,
+section > div {
+  margin: 5px 0px;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px;
+}
+
+form {
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+form:has(.delete:hover) {
+  background-color: #ffc2b7;
+}
